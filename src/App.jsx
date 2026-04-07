@@ -7,7 +7,6 @@
 // Créez un dossier "assets" dans src/, puis décommentez :
 //
  import logo       from "./assets/logo.png";
-import logo1      from "./assets/logo1.png";
 //
  import parfum1    from "./assets/parfum1.png"; import parfum8   from "./assets/parfum8.png";
 import parfum3    from "./assets/parfum3.png";
@@ -60,7 +59,7 @@ import { useState, useEffect } from "react";
 // ─── 2. LOGO ─────────────────────────────────────────────────
 // Remplacez null par: logo
 const LOGO_IMAGE = logo;
-const LOGO_IMAGE1 = logo1;
+const LOGO_IMAGE1 = logo;
 
 // ─── 3. PRODUITS ─────────────────────────────────────────────
 // Remplacez null par le nom de votre variable d'import
