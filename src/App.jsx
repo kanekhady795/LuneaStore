@@ -330,7 +330,7 @@ export default function LuneaStore() {
         </div>
 
         <div style={{ display:"flex", gap:14, alignItems:"center" }}>
-          <a href="https://www.instagram.com/_lunea.store?igsh=emtlM2RsZW1zcjV2&utm_source=qr" target="_blank" rel="noreferrer"
+          <a href="https://www.instagram.com/_lunea.store?igsh=d3ozaDZyMXY1Y3U=" target="_blank" rel="noreferrer"
             style={{ fontSize:".65rem", fontWeight:700, color:"#C8405A", textDecoration:"none", letterSpacing:".05em" }}>
             @lunea_store
           </a>
@@ -467,9 +467,9 @@ export default function LuneaStore() {
             <div>
               <div style={{ fontSize:".58rem", letterSpacing:".3em", textTransform:"uppercase", color:"#B499E8", fontWeight:800, marginBottom:20 }}>Réseaux Sociaux</div>
               {[
-                {p:"Instagram", h:"@lunea_store",   c:"#E8758A", bg:"rgba(200,64,90,0.15)",   url:"https://instagram.com/lunea_store",  a:"IG"},
+                {p:"Instagram", h:"@lunea_store",   c:"#E8758A", bg:"rgba(200,64,90,0.15)",   url:"https://www.instagram.com/_lunea.store?igsh=d3ozaDZyMXY1Y3U=",  a:"IG"},
                 {p:"TikTok",    h:"@lunea_store00", c:"#B499E8", bg:"rgba(104,53,200,0.15)",  url:"https://tiktok.com/@lunea_store00", a:"TT"},
-                {p:"Snapchat",  h:"mdbn2024",       c:"#F0C060", bg:"rgba(212,130,10,0.15)",  url:"#",                                 a:"SC"},
+                {p:"Snapchat",  h:"mdbn2024",       c:"#F0C060", bg:"rgba(212,130,10,0.15)",  url:"https://snapchat.com/t/edy0YWUs",                                 a:"SC"},
               ].map(s=>(
                 <a key={s.p} href={s.url} target="_blank" rel="noreferrer" className="soc-row">
                   <div style={{ width:38,height:38,borderRadius:"50%",flexShrink:0,background:s.bg,border:`2px solid ${s.c}55`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:".65rem",color:s.c,fontWeight:800 }}>{s.a}</div>
