@@ -8,7 +8,7 @@
 //
  import logo       from "./assets/logo.png";
 //
- import parfum1    from "./assets/parfum1.png"; import parfum8   from "./assets/parfum8.png";
+ import parfum1    from "./assets/parfum1.png"; 
 import parfum3    from "./assets/parfum3.png";
 import parfum4    from "./assets/parfum4.png";
 import parfum5   from "./assets/parfum5.png";
@@ -66,13 +66,12 @@ const LOGO_IMAGE1 = logo;
 // Exemple : image: parfum1
 const PRODUCTS = {
   parfums: [
-    {        note: "Boisé · Ambré · Oriental",      badge: "Best-seller", image: parfum1 },
-    {     note: "Floral · Romantique · Doux",     badge: "Nouveau",     image: parfum3 },
-    {     note: "Musqué · Profond · Sensuel",   badge: "Exclusif",    image: parfum4},
-    {   note: "Boisé · Crémeux · Chaleureux", badge: "Collection",  image: parfum5 },
-    {   note: "Boisé · Crémeux · Chaleureux",  badge: "Collection",  image: parfum6 },
-    {   note: "Boisé · Crémeux · Chaleureux", badge: "Collection",  image: parfum7 },
-    {  note: "Boisé · Crémeux · Chaleureux", badge: "Collection",  image: parfum8 },
+    {        note: "Boisé · Ambré · Oriental", price:"3000 FCFA"   ,  badge: "Best-seller", image: parfum1 },
+    {     note: "Floral · Romantique · Doux", price:"3000 FCFA",    badge: "Nouveau",     image: parfum3 },
+    {     note: "Musqué · Profond · Sensuel", price:"3000 FCFA" , badge: "Exclusif",    image: parfum4},
+    {   note: "Boisé · Crémeux · Chaleureux",price:"3000 FCFA", badge: "Collection",  image: parfum5 },
+    {   note: "Boisé · Crémeux · Chaleureux", price:"3000 FCFA", badge: "Collection",  image: parfum6 },
+    {   note: "Boisé · Crémeux · Chaleureux",price:"3000 FCFA", badge: "Collection",  image: parfum7 },
     { name: "J'adore Dior", note: "Citrus · Vif · Rafraîchissant", badge: "Nouveau", image: parfum9, price: "3000 FCFA" },
     { name: "One Million", note: "Fruité · Sucré · Ensoleillé", badge: "Exclusif", image: parfum10, price: " 3000 FCFA" },
     { name: "Hugo Boss", note: "Épicé · Chaud · Mystérieux", badge: "Collection", image: parfum11, price: "3000 FCFA" },
@@ -83,7 +82,7 @@ const PRODUCTS = {
     { name: "Armani code men", note: "Musqué · Sensuel · Nocturne", badge: "Nouveau", image: parfum17, price: "3000 FCFA" },
   ],
   huiles: [
-    { name: "Madawi",     note: "Floral · Envoûtant · Féminin",  price: "6 500 FCFA", badge: "Naturel",   image: huile1 },
+    { name: "Madawi",     note: "Floral · Envoûtant · Féminin",  price: "5ml 1500f, 10ml 2500f , 15ml 3500f", badge: "Naturel",   image: huile1 },
     { name: "Huile Ambrée",        note: "Ambré · Doux · Enveloppant",    price: "5ml 1500f, 10ml 2500f , 15ml 3500f", badge: "Populaire", image: huile2 },
     { name: "Poussière d'or",      note: "Précieux · Oriental · Luxueux", price: "5ml 1500f, 10ml 2500f , 15ml 3500f", badge: "Luxe",      image: huile3 },
     { name: "Scandal d'homme", note: "Gourmand · Doux · Sensuel",     price: "5ml 1500f, 10ml 2500f , 15ml 3500f", badge: "Doux",      image: huile4 },
@@ -331,7 +330,7 @@ export default function LuneaStore() {
         </div>
 
         <div style={{ display:"flex", gap:14, alignItems:"center" }}>
-          <a href="https://instagram.com/lunea_store" target="_blank" rel="noreferrer"
+          <a href="https://www.instagram.com/_lunea.store?igsh=emtlM2RsZW1zcjV2&utm_source=qr" target="_blank" rel="noreferrer"
             style={{ fontSize:".65rem", fontWeight:700, color:"#C8405A", textDecoration:"none", letterSpacing:".05em" }}>
             @lunea_store
           </a>
@@ -400,7 +399,7 @@ export default function LuneaStore() {
           <p className="a3" style={{ fontSize:"1rem", lineHeight:1.9, color:"#666", maxWidth:640, margin:"0 auto 44px" }}>
             Lunea Store est une marque spécialisée dans l'univers de la parfumerie et du bien-être olfactif.
             Nous proposons une large gamme de produits tels que des huiles parfumées corporelles, des parfums
-            authentiques, des collections privées, parfums d'intensité soigneusement sélectionnés pour apporter
+            authentiques, des collections privées, parfums d'intensité soigneusement sélectionnés, des lunettes de soleil et des accssoires pour apporter
             fraîcheur, élégance et plaisir des sens au quotidien.
           </p>
 
@@ -442,7 +441,7 @@ export default function LuneaStore() {
           <p style={{ fontSize:"1.05rem", lineHeight:2, color:"rgba(255,255,255,0.7)", maxWidth:720, margin:"0 auto" }}>
             Lunea Store est une marque spécialisée dans l'univers de la parfumerie et du bien-être olfactif.
             Nous proposons une large gamme de produits tels que des huiles parfumées corporelles, des parfums
-            authentiques, des collections privées, parfums d'intensité soigneusement sélectionnés pour apporter
+            authentiques, des collections privées, parfums d'intensité soigneusement sélectionnés des lunettes de soleil et des accssoires pour apporter
             fraîcheur, élégance et plaisir des sens au quotidien.
           </p>
         </div>
