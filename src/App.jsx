@@ -1,173 +1,166 @@
 // ============================================================
-//  LUNÉA STORE — Site Vitrine React
+//  LUNÉA STORE — Site Vitrine React (Version Responsive)
 //  Couleurs vives, fond clair, luxe moderne
 // ============================================================
 
-// ─── 1. IMPORTEZ VOS IMAGES ICI ──────────────────────────────
-// Créez un dossier "assets" dans src/, puis décommentez :
-//
- import logo       from "./assets/logo.png";
-//
- import parfum1    from "./assets/parfum1.png"; 
-import parfum3    from "./assets/parfum3.png";
-import parfum4    from "./assets/parfum4.png";
-import parfum5   from "./assets/parfum5.png";
-import parfum6    from "./assets/parfum6.png";
-import parfum7    from "./assets/parfum7.png";
-import parfum9    from "./assets/parfum9.png";
-import parfum10   from "./assets/parfum10.png";
-import parfum11   from "./assets/parfum11.png";
-import parfum12   from "./assets/parfum12.png";
-import parfum13   from "./assets/parfum13.png";
-import parfum14   from "./assets/parfum14.png";
-import parfum15   from "./assets/parfum15.png";
-import parfum17   from "./assets/parfum17.png";
+import { useState, useEffect } from "react";
 
-//
- import huile1     from "./assets/huile1.png";
- import huile2     from "./assets/huile2.png";
-import huile3     from "./assets/huile3.png";
- import huile4     from "./assets/huile4.png";
- import huile5    from "./assets/huile5.png";
- import huile6     from "./assets/huile6.png";
-//
- import musk1      from "./assets/musk1.png";
- import musk2      from "./assets/musk2.png";
- import musk3      from "./assets/musk3.png";
- import musk4      from "./assets/musk4.png";
-//
- import lunette1   from "./assets/lunette1.png";
- import lunette5  from "./assets/lunette5.png";
- import lunette3   from "./assets/lunette3.png";
- import lunette4   from "./assets/lunette4.png";
-//
-import a1  from "./assets/a1.png";
-import a2  from "./assets/a2.png";
-import a3  from "./assets/a3.png";
-import a13  from "./assets/a13.png";
-import a5  from "./assets/a5.png";
-import a6  from "./assets/a6.png";
-import a7  from "./assets/a7.png";
-import a8  from "./assets/a8.png";
-import a9  from "./assets/a9.png";
+// ─── 1. IMPORTS IMAGES ───────────────────────────────────────
+// Remplacez par vos vrais imports
+import logo from "./assets/logo.png";
+
+import parfum1 from "./assets/parfum1.png";
+import parfum3 from "./assets/parfum3.png";
+import parfum4 from "./assets/parfum4.png";
+import parfum5 from "./assets/parfum5.png";
+import parfum6 from "./assets/parfum6.png";
+import parfum7 from "./assets/parfum7.png";
+import parfum8 from "./assets/parfum8.png";
+import parfum9 from "./assets/parfum9.png";
+import parfum10 from "./assets/parfum10.png";
+import parfum11 from "./assets/parfum11.png";
+import parfum12 from "./assets/parfum12.png";
+import parfum13 from "./assets/parfum13.png";
+import parfum14 from "./assets/parfum14.png";
+import parfum15 from "./assets/parfum15.png";
+import parfum16 from "./assets/parfum16.png";
+import parfum17 from "./assets/parfum17.png";
+import parfum18 from "./assets/parfum18.png";
+import parfum19 from "./assets/parfum19.png";
+import parfum20 from "./assets/parfum20.png";
+import parfum21 from "./assets/parfum21.png";
+import parfum22 from "./assets/parfum22.png";
+
+import huile1 from "./assets/huile1.png";
+import huile2 from "./assets/huile2.png";
+import huile3 from "./assets/huile3.png";
+import huile4 from "./assets/huile4.png";
+import huile5 from "./assets/huile5.png";
+import huile6 from "./assets/huile6.png";
+
+import musk1 from "./assets/musk1.png";
+import musk2 from "./assets/musk2.png";
+import musk3 from "./assets/musk3.png";
+import musk4 from "./assets/musk4.png";
+
+import lunette1 from "./assets/lunette1.png";
+import lunette3 from "./assets/lunette3.png";
+import lunette4 from "./assets/lunette4.png";
+import lunette5 from "./assets/lunette5.png";
+import lunette6 from "./assets/lunette6.png";
+import lunette7 from "./assets/lunette7.png";
+import lunette8 from "./assets/lunette8.png";
+import lunette9 from "./assets/lunette9.png";
+import lunette10 from "./assets/lunette10.png";
+import lunette11 from "./assets/lunette11.png";
+import lunette12 from "./assets/lunette12.png";
+
+import a1 from "./assets/a1.png";
+import a2 from "./assets/a2.png";
+import a3 from "./assets/a3.png";
+import a4 from "./assets/a4.png";
+import a13 from "./assets/a13.png";
+import a5 from "./assets/a5.png";
+import a6 from "./assets/a6.png";
+import a7 from "./assets/a7.png";
+import a8 from "./assets/a8.png";
+import a9 from "./assets/a9.png";
 import a10 from "./assets/a10.png";
 import a11 from "./assets/a11.png";
 import a12 from "./assets/a12.png";
-import { useState, useEffect } from "react";
-
 
 // ─── 2. LOGO ─────────────────────────────────────────────────
-// Remplacez null par: logo
 const LOGO_IMAGE = logo;
 const LOGO_IMAGE1 = logo;
 
 // ─── 3. PRODUITS ─────────────────────────────────────────────
-// Remplacez null par le nom de votre variable d'import
-// Exemple : image: parfum1
 const PRODUCTS = {
   parfums: [
-    {        note: "Boisé · Ambré · Oriental", price:"3000 FCFA"   ,  badge: "Best-seller", image: parfum1 },
-    { name: "OUD",    note: "Floral · Romantique · Doux", price:"3000 FCFA",    badge: "Nouveau",     image: parfum3 },
-    {   name: "Kayali 28",  note: "Musqué · Profond · Sensuel", price:"3000 FCFA" , badge: "Exclusif",    image: parfum4},
-    {  name: "Khamrah", note: "Boisé · Crémeux · Chaleureux",price:"3000 FCFA", badge: "Collection",  image: parfum5 },
-    { name: "Poussiere d'or",  note: "Boisé · Crémeux · Chaleureux", price:"3000 FCFA", badge: "Collection",  image: parfum6 },
-    { name: "Bianco Latte",  note: "Boisé · Crémeux · Chaleureux",price:"3000 FCFA", badge: "Collection",  image: parfum7 },
-    { name: "J'adore Dior", note: "Citrus · Vif · Rafraîchissant", badge: "Nouveau", image: parfum9, price: "3000 FCFA" },
-    { name: "One Million", note: "Fruité · Sucré · Ensoleillé", badge: "Exclusif", image: parfum10, price: " 3000 FCFA" },
-    { name: "Hugo Boss", note: "Épicé · Chaud · Mystérieux", badge: "Collection", image: parfum11, price: "3000 FCFA" },
-    { name: "Bleu de Channel", note: "Herbal · Naturel · Apaisant", badge: "Best-seller", image: parfum12, price: "3000 FCFA" },
-    { name: "Coco Mademoiselle", note: "Vanillé · Doux · Gourmand", badge: "Nouveau", image: parfum13, price: "3000 FCFA" },
-    { name: "Chloe", note: "Aquatique · Léger · Marin", badge: "Exclusif", image: parfum14, price: "3000 FCFA" },
-    { name: "La Petite Rose Noir ", note: "Floral · Élégant · Féminin", badge: "Collection", image: parfum15, price: "3000 FCFA" },
-    { name: "Armani code men", note: "Musqué · Sensuel · Nocturne", badge: "Nouveau", image: parfum17, price: "3000 FCFA" },
+    { name: "OUD", note: "Boisé · Ambré · Oriental", price: "3000 FCFA", badge: "Best-seller", image: parfum1 },
+    { name: "OUD", note: "Floral · Romantique · Doux", price: "3000 FCFA", badge: "Nouveau", image: parfum3 },
+    { name: "Kayali 28", note: "Musqué · Profond · Sensuel", price: "3000 FCFA", badge: "Exclusif", image: parfum4 },
+    { name: "Khamrah", note: "Boisé · Crémeux · Chaleureux", price: "3000 FCFA", badge: "Collection", image: parfum5 },
+    { name: "Poussiere d'or", note: "Boisé · Crémeux · Chaleureux", price: "3000 FCFA", badge: "Collection", image: parfum6 },
+    { name: "Bianco Latte", note: "Boisé · Crémeux · Chaleureux", price: "3000 FCFA", badge: "Collection", image: parfum7 },
+    { name: "Oud", note: "Boisé · Crémeux · Chaleureux", price: "3000 FCFA", badge: "Collection", image: parfum8 },
+    { name: "Khair", note: "Citrus · Vif · Rafraîchissant", price: "3000 FCFA", badge: "Nouveau", image: parfum9 },
+    { name: "Vanilla Aura", note: "Fruité · Sucré · Ensoleillé", price: "3000 FCFA", badge: "Exclusif", image: parfum10 },
+    { name: "Hugo Boss", note: "Épicé · Chaud · Mystérieux", price: "3000 FCFA", badge: "Collection", image: parfum11 },
+    { name: "Sauvage Dior", note: "Herbal · Naturel · Apaisant", price: "3000 FCFA", badge: "Best-seller", image: parfum12 },
+    { name: "Prada", note: "Vanillé · Doux · Gourmand", price: "3000 FCFA", badge: "Nouveau", image: parfum13 },
+    { name: "ORCHID", note: "Aquatique · Léger · Marin", price: "3000 FCFA", badge: "Exclusif", image: parfum14 },
+    { name: "La Petite Rose Noir", note: "Floral · Élégant · Féminin", price: "3000 FCFA", badge: "Collection", image: parfum15 },
+    { name: "Victoria Secret", note: "Musqué · Sensuel · Nocturne", price: "3000 FCFA", badge: "Nouveau", image: parfum16 },
+    { name: "Victoria Secret", note: "Musqué · Sensuel · Nocturne", price: "3000 FCFA", badge: "Nouveau", image: parfum17 },
+    { name: "Vanilla Voyage", note: "Oriental · Riche · Charismatique", price: "3000 FCFA", badge: "Nouveau", image: parfum18 },
+    { name: "My way", note: "Ambré · Chaud · Sensuel", price: "3000 FCFA", badge: "Exclusif", image: parfum19 },
+    { name: "Hypnotic Poison", note: "Floral · Légère · Lumineuse", price: "3000 FCFA", badge: "Collection", image: parfum20 },
+    { name: "L'interdit Givenchy", note: "Boisé · Mystérieux · Raffiné", price: "3000 FCFA", badge: "Best-seller", image: parfum21 },
+    { name: "Baccarat Rouge", note: "Aérien · Frais · Élégant", price: "3000 FCFA", badge: "Signature", image: parfum22 },
   ],
   huiles: [
-    { name: "Madawi",     note: "Floral · Envoûtant · Féminin",  price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Naturel",   image: huile1 },
-    { name: "Huile Ambrée",        note: "Ambré · Doux · Enveloppant",    price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Populaire", image: huile2 },
-    { name: "Poussière d'or",      note: "Précieux · Oriental · Luxueux", price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Luxe",      image: huile3 },
-    { name: "Scandal d'homme", note: "Gourmand · Doux · Sensuel",     price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Doux",      image: huile4 },
-    { name: "Bois intense",        note: "Boisé · Crémeux · Chaleureux", price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Collection", image: huile5 },
-    { name: "Khamrah",      note: "Boisé · Intense · Profond",    price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Luxe",      image: huile6 },
+    { name: "Madawi", note: "Floral · Envoûtant · Féminin", price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Naturel", image: huile1 },
+    { name: "Huile Ambrée", note: "Ambré · Doux · Enveloppant", price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Populaire", image: huile2 },
+    { name: "Poussière d'or", note: "Précieux · Oriental · Luxueux", price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Luxe", image: huile3 },
+    { name: "Scandal d'homme", note: "Gourmand · Doux · Sensuel", price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Doux", image: huile4 },
+    { name: "Bois intense", note: "Boisé · Crémeux · Chaleureux", price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Collection", image: huile5 },
+    { name: "Khamrah", note: "Boisé · Intense · Profond", price: "5ml 1500 FCFA, 10ml 2500 FCFA, 15ml 3500 FCFA", badge: "Luxe", image: huile6 },
   ],
   musks: [
-    { name: " Musk",  note: "Pur · Frais · Intemporel", badge: "Signature", image: musk1 },
-    { name: " Musk rose",  note: "Pur · Frais · Intemporel",   badge: "Signature", image: musk2 },
-    { name: " Musk ",  note: "Pur · Frais · Intemporel",   badge: "Signature", image: musk3 },
-    { name: " Musk",  note: "Pur · Frais · Intemporel",   badge: "Signature", image: musk4 },
+    { name: "Musk", note: "Pur · Frais · Intemporel", price: "3000 FCFA", badge: "Signature", image: musk1 },
+    { name: "Musk rose", note: "Pur · Frais · Intemporel", price: "3000 FCFA", badge: "Signature", image: musk2 },
+    { name: "Musk", note: "Pur · Frais · Intemporel", price: "3000 FCFA", badge: "Signature", image: musk3 },
+    { name: "Musk", note: "Pur · Frais · Intemporel", price: "3000 FCFA", badge: "Signature", image: musk4 },
   ],
   lunettes: [
-    { name: "Modèle Eclipse", note: "Cat-eye · Audacieux · Chic",         badge: "Tendance",  image: lunette1 },
-    { name: "Modèle Sahara",  note: "Oversize · Glamour · Mode",           badge: "Glamour",   image: lunette5 },
-    { name: "Modèle Lumière", note: "Aviateur · Classique · Intemporel",   badge: "Classique", image: lunette3 },
-    { name: "Modèle Nuit",    note: "Round · Mystérieux · Élégant",       badge: "Élégant",   image: lunette4 },
-    { name: " Van cleef Rose", note: "Cat-eye · Audacieux · Chic",         badge: "Tendance",  image: a1 },
-    { name: "Van Cleef doré",  note: "Oversize · Glamour · Mode",           badge: "Glamour",   image: a2 },
-    { name: "Bracelet", note: "Aviateur · Classique · Intemporel",   badge: "Classique", image: a3 },
-    { name: "Montre rare",    note: "Round · Mystérieux · Élégant",       badge: "Élégant",   image: a13 },
-    { name: "Montre Chic", note: "Cat-eye · Audacieux · Chic",         badge: "Tendance",  image: a5 },
-    { name: "Boucle d'oreille",  note: "Oversize · Glamour · Mode",           badge: "Glamour",   image: a6},
-    { name: "Bracelet,Boucle D'oreille,Bague", note: "Aviateur · Classique · Intemporel",   badge: "Classique", image: a7},
-    { name: "bracelet,bague",    note: "Round · Mystérieux · Élégant",       badge: "Élégant",   image: a8 },
-    { name: "Bracelet", note: "Cat-eye · Audacieux · Chic",         badge: "Tendance",  image: a9 },
-    { name: "bracelet",  note: "Oversize · Glamour · Mode",           badge: "Glamour",   image: a10 },
-    { name: "Bracelet", note: "Aviateur · Classique · Intemporel",   badge: "Classique", image: a11 },
-    { name: "Boucle d'oreille",    note: "Round · Mystérieux · Élégant",       badge: "Élégant",   image: a12 },
+    { name: "Modèle Eclipse", note: "Cat-eye · Audacieux · Chic", price: "15000 FCFA", badge: "Tendance", image: lunette1 },
+    { name: "Modèle Sahara", note: "Oversize · Glamour · Mode", price: "15000 FCFA", badge: "Glamour", image: lunette5 },
+    { name: "Modèle Lumière", note: "Aviateur · Classique · Intemporel", price: "15000 FCFA", badge: "Classique", image: lunette3 },
+    { name: "Modèle Crystal", note: "Rectangulaire · Moderne · Transparent", price: "15000 FCFA", badge: "Nouveau", image: lunette4 },
+    { name: "Modèle Soleil", note: "Ronde · Vintage · Solaire", price: "15000 FCFA", badge: "Tendance", image: lunette6 },
+    { name: "Modèle Mirage", note: "Pilote · Minimaliste · Léger", price: "15000 FCFA", badge: "Populaire", image: lunette7 },
+    { name: "Modèle Aurora", note: "Carré · Urbain · Élégant", price: "15000 FCFA", badge: "Chic", image: lunette8 },
+    { name: "Modèle Prestige", note: "Oversize · Couture · Premium", price: "15000 FCFA", badge: "Luxe", image: lunette9 },
+    { name: "Modèle Nova", note: "Aviateur · Raffiné · Brillant", price: "15000 FCFA", badge: "Signature", image: lunette10 },
+    { name: "Modèle Velvet", note: "Papillon · Féminin · Doux", price: "15000 FCFA", badge: "Collection", image: lunette11 },
+    { name: "Modèle Horizon", note: "Rectangulaire · Sportif · Confort", price: "15000 FCFA", badge: "Nouveau", image: lunette12 },
+    { name: "Van cleef Rose", note: "Cat-eye · Audacieux · Chic", price: "12000 FCFA", badge: "Tendance", image: a1 },
+    { name: "Modèle Aura", note: "Futuriste · Lumineux · Élégant", price: "12000 FCFA", badge: "Nouveau", image: a2 },
+    { name: "Modèle Prism", note: "Multicolore · Artistique · Unique", price: "12000 FCFA", badge: "Exclusif", image: a3 },
+    { name: "Modèle Saphir", note: "Cristallin · Raffiné · Sobre", price: "12000 FCFA", badge: "Collection", image: a4 },
+    { name: "Modèle Céleste", note: "Aérien · Doux · Raffiné", price: "12000 FCFA", badge: "Signature", image: a5 },
+    { name: "Modèle Satin", note: "Lisse · Sophistiqué · Confortable", price: "12000 FCFA", badge: "Chic", image: a6 },
+    { name: "Modèle Lueur", note: "Brillant · Léger · Intemporel", price: "12000 FCFA", badge: "Populaire", image: a7 },
+    { name: "Modèle Odyssée", note: "Aventureux · Élégant · Moderne", price: "12000 FCFA", badge: "Luxe", image: a8 },
+    { name: "Modèle Mirage Noir", note: "Mystérieux · Charismatique · Sombre", price: "12000 FCFA", badge: "Best-seller", image: a9 },
+    { name: "Modèle Éclat", note: "Chatoyant · Précieux · Haut de gamme", price: "12000 FCFA", badge: "Signature", image: a10 },
+    { name: "Modèle Carmin", note: "Raffiné · Intense · Audacieux", price: "12000 FCFA", badge: "Collection", image: a11 },
+    { name: "Modèle Luna", note: "Féminin · Doux · Élégant", price: "12000 FCFA", badge: "Nouveau", image: a12 },
   ],
+  
 };
 
 // ─── CONFIG SECTIONS ─────────────────────────────────────────
 const SECTIONS = [
-  {
-    key: "parfums", label: "Parfums", emoji: "🫧", eyebrow: "Collection Signature",
-    color: "#C8405A", colorLight: "#FDEEF1", colorMid: "#F4A0B0",
-    gradient: "linear-gradient(135deg,#C8405A,#E8758A)",
-    bgSection: "#fff",
-  },
-  {
-    key: "huiles", label: "Huiles Parfumées", emoji: "🌿", eyebrow: "Soin & Bien-être",
-    color: "#1E8A6E", colorLight: "#E6F7F3", colorMid: "#7DCDB8",
-    gradient: "linear-gradient(135deg,#1E8A6E,#40B896)",
-    bgSection: "#F0FAF7",
-  },
-  {
-    key: "musks", label: "Musks", emoji: "🌙", eyebrow: "Envoûtement Pur",
-    color: "#928a9f", colorLight: "#F0EBFD", colorMid: "#B499E8",
-    gradient: "linear-gradient(135deg,#6835C8,#9060E0)",
-    bgSection: "#fff",
-  },
-  {
-    key: "lunettes", label: "Lunettes de Soleil et accessoires", emoji: "☀️", eyebrow: "Style & Soleil",
-    color: "#a89a85", colorLight: "#FEF5E6", colorMid: "#F0BC60",
-    gradient: "linear-gradient(135deg,#C87A10,#ECA030)",
-    bgSection: "#FEF8EE",
-  },
+  { key: "parfums", label: "Parfums", emoji: "🫧", eyebrow: "Collection Signature", color: "#C8405A", colorLight: "#FDEEF1", colorMid: "#F4A0B0", gradient: "linear-gradient(135deg,#C8405A,#E8758A)", bgSection: "#fff" },
+  { key: "huiles", label: "Huiles Parfumées", emoji: "🌿", eyebrow: "Soin & Bien-être", color: "#1E8A6E", colorLight: "#E6F7F3", colorMid: "#7DCDB8", gradient: "linear-gradient(135deg,#1E8A6E,#40B896)", bgSection: "#F0FAF7" },
+  { key: "musks", label: "Musks", emoji: "🌙", eyebrow: "Envoûtement Pur", color: "#928a9f", colorLight: "#F0EBFD", colorMid: "#B499E8", gradient: "linear-gradient(135deg,#6835C8,#9060E0)", bgSection: "#fff" },
+  { key: "lunettes", label: "Lunettes & Accessoires", emoji: "☀️", eyebrow: "Style & Soleil", color: "#a89a85", colorLight: "#FEF5E6", colorMid: "#F0BC60", gradient: "linear-gradient(135deg,#C87A10,#ECA030)", bgSection: "#FEF8EE" },
 ];
 
-// ─── PLACEHOLDER IMAGE ───────────────────────────────────────
+// ─── PLACEHOLDER ─────────────────────────────────────────────
 function ImgPlaceholder({ section }) {
-  const icons = { parfums:"🫧", huiles:"🌿", musks:"🌙", lunettes:"☀️" };
   return (
-    <div style={{
-      width:"50px", height:"100px",
-      background:`linear-gradient(160deg,${section.colorLight} 0%,#fff 100%)`,
-      display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:12,
-    }}>
-      <div style={{
-        width:80, height:80, borderRadius:"50%",
-        background:section.gradient,
-        display:"flex", alignItems:"center", justifyContent:"center",
-        fontSize:"2rem",
-        boxShadow:`0 8px 28px ${section.color}45`,
-      }}>{icons[section.key]}</div>
-      <span style={{
-        fontSize:"0.6rem", color:section.color, letterSpacing:"0.2em",
-        textTransform:"uppercase", fontWeight:700,
-      }}>Photo à venir</span>
+    <div style={{ width: "100%", height: "100%", background: `linear-gradient(160deg,${section.colorLight} 0%,#fff 100%)`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
+      <div style={{ width: 90, height: 90, borderRadius: "50%", background: section.gradient, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2.8rem" }}>
+        {section.emoji}
+      </div>
+      <span style={{ fontSize: "0.65rem", color: section.color, fontWeight: 700 }}>Photo à venir</span>
     </div>
   );
 }
 
-// ─── CARTE PRODUIT ───────────────────────────────────────────
+// ─── CARD ────────────────────────────────────────────────────
 function Card({ product, section }) {
   const [hov, setHov] = useState(false);
   return (
@@ -175,39 +168,33 @@ function Card({ product, section }) {
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
-        background:"#fff", borderRadius:22, overflow:"hidden",
-        boxShadow: hov
-          ? `0 22px 64px ${section.color}28, 0 4px 16px rgba(194, 174, 174, 0.07)`
-          : "0 4px 22px rgba(0,0,0,0.07)",
-        border: `2px solid ${hov ? section.color+"55" : "transparent"}`,
-        transform: hov ? "translateY(-9px) scale(1.015)" : "none",
-        transition:"all 0.4s cubic-bezier(0.23,1,0.32,1)",
+        background: "#fff",
+        borderRadius: 22,
+        overflow: "hidden",
+        boxShadow: hov ? `0 22px 64px ${section.color}28` : "0 8px 30px rgba(0,0,0,0.08)",
+        transform: hov ? "translateY(-8px)" : "none",
+        transition: "all 0.4s cubic-bezier(0.23,1,0.32,1)",
       }}
     >
-      <div style={{ position:"relative", aspectRatio:"3/4", overflow:"hidden" }}>
-        {product.image
-          ? <img src={product.image} alt={product.name} style={{
-              width:"100%", height:"100%", objectFit:"cover", display:"block",
-              transform: hov ? "scale(1.06)" : "scale(1)", transition:"transform 0.5s ease",
-            }}/>
-          : <ImgPlaceholder section={section}/>
-        }
-        <div style={{
-          position:"absolute", top:14, left:14,
-          background:section.gradient, color:"#fff",
-          fontSize:"0.5rem", letterSpacing:"0.18em", textTransform:"uppercase",
-          padding:"5px 13px", borderRadius:30, fontWeight:800,
-          boxShadow:`0 4px 14px ${section.color}55`,
-        }}>{product.badge}</div>
+      <div style={{ position: "relative", aspectRatio: "3/4", overflow: "hidden" }}>
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            style={{ width: "100%", height: "100%", objectFit: "cover", transform: hov ? "scale(1.06)" : "scale(1)", transition: "transform 0.5s ease" }}
+          />
+        ) : (
+          <ImgPlaceholder section={section} />
+        )}
+        <div style={{ position: "absolute", top: 14, left: 14, background: section.gradient, color: "#fff", fontSize: "0.55rem", padding: "4px 12px", borderRadius: 30, fontWeight: 800 }}>
+          {product.badge}
+        </div>
       </div>
 
-      <div style={{ padding:"18px 20px 22px" }}>
-        <div style={{ fontSize:"0.58rem", color:section.color, letterSpacing:"0.15em", fontStyle:"italic", marginBottom:5 }}>{product.note}</div>
-        <div style={{ fontFamily:"'Playfair Display',serif", fontSize:"1.08rem", fontWeight:700, color:"#1A1A2E", marginBottom:18 }}>{product.name}</div>
-        <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", paddingTop:14, borderTop:`2.5px solid ${section.colorLight}` }}>
-          <span style={{ fontFamily:"'Playfair Display',serif", fontSize:"1rem", fontWeight:700, color:section.color }}>{product.price}</span>
-
-        </div>
+      <div style={{ padding: "18px 20px 24px" }}>
+        <div style={{ fontSize: "0.6rem", color: section.color, marginBottom: 6 }}>{product.note}</div>
+        <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.1rem", fontWeight: 700, marginBottom: 12 }}>{product.name}</div>
+        <div style={{ fontSize: "1.05rem", fontWeight: 700, color: section.color }}>{product.price}</div>
       </div>
     </div>
   );
@@ -216,292 +203,197 @@ function Card({ product, section }) {
 // ─── SECTION PRODUITS ────────────────────────────────────────
 function ProdSection({ section }) {
   return (
-    <section id={section.key} style={{ padding:"90px 48px", background:section.bgSection, position:"relative", overflow:"hidden" }}>
-      <div style={{ position:"absolute", top:-100, right:-100, width:380, height:380, borderRadius:"50%", background:`${section.color}0D`, pointerEvents:"none" }}/>
-      <div style={{ position:"absolute", bottom:-70, left:-70, width:260, height:260, borderRadius:"50%", background:`${section.color}08`, pointerEvents:"none" }}/>
-
-      <div style={{ maxWidth:1360, margin:"0 auto" }}>
-        <div style={{ marginBottom:52, display:"flex", alignItems:"flex-end", justifyContent:"space-between", flexWrap:"wrap", gap:16 }}>
-          <div>
-            <div style={{
-              display:"inline-flex", alignItems:"center", gap:8,
-              background:section.gradient, color:"#fff",
-              fontSize:"0.55rem", letterSpacing:"0.3em", textTransform:"uppercase",
-              padding:"6px 16px", borderRadius:30, fontWeight:800,
-              marginBottom:14, boxShadow:`0 4px 16px ${section.color}44`,
-            }}><span>{section.emoji}</span><span>{section.eyebrow}</span></div>
-            <h2 style={{
-              fontFamily:"'Playfair Display',serif",
-              fontSize:"clamp(2.2rem,5vw,3.8rem)", fontWeight:700,
-              color:"#1A1A2E", letterSpacing:"0.02em", lineHeight:1.1,
-            }}>{section.label}</h2>
-            <div style={{ width:60, height:4, background:section.gradient, borderRadius:4, marginTop:14 }}/>
+    <section id={section.key} style={{ padding: "80px 20px", background: section.bgSection }}>
+      <div style={{ maxWidth: 1360, margin: "0 auto" }}>
+        <div style={{ marginBottom: 50, textAlign: "center" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: section.gradient, color: "#fff", padding: "6px 18px", borderRadius: 30, fontSize: "0.6rem", fontWeight: 800, marginBottom: 12 }}>
+            {section.emoji} {section.eyebrow}
           </div>
-          <div style={{ fontSize:"0.72rem", color:"#aaa", letterSpacing:"0.08em" }}>
-            {PRODUCTS[section.key].length} produits disponibles
-          </div>
+          <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(2.2rem, 5.5vw, 3.6rem)", fontWeight: 700, color: "#1A1A2E" }}>
+            {section.label}
+          </h2>
         </div>
 
-        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))", gap:28 }}>
-          {PRODUCTS[section.key].map((p,i) => <Card key={i} product={p} section={section}/>)}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))",
+          gap: 28,
+        }}>
+          {PRODUCTS[section.key].map((p, i) => (
+            <Card key={i} product={p} section={section} />
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-// ─── APP ─────────────────────────────────────────────────────
+// ─── MAIN APP ────────────────────────────────────────────────
 export default function LuneaStore() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 70);
-    window.addEventListener("scroll", fn);
-    return () => window.removeEventListener("scroll", fn);
+    const handleScroll = () => setScrolled(window.scrollY > 70);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const goTo = id => document.getElementById(id)?.scrollIntoView({ behavior:"smooth", block:"start" });
+
+  const goTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setMenuOpen(false);
+  };
 
   return (
-    <div style={{ background:"#FAFAF9", minHeight:"100vh", color:"#1A1A2E", fontFamily:"'Nunito',sans-serif", overflowX:"hidden" }}>
+    <div style={{ background: "#FAFAF9", minHeight: "100vh", color: "#1A1A2E", fontFamily: "'Nunito', sans-serif", overflowX: "hidden" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Nunito:wght@300;400;600;700;800;900&display=swap');
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{background:#FAFAF9}
-        ::-webkit-scrollbar{width:5px}
-        ::-webkit-scrollbar-track{background:#f0f0f0}
-        ::-webkit-scrollbar-thumb{background:linear-gradient(#C8405A,#6835C8);border-radius:5px}
-        @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
-        @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-        @keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
-        @keyframes spinSlow{to{transform:rotate(360deg)}}
-        .a0{animation:fadeUp .9s .0s ease both}
-        .a1{animation:fadeUp .9s .15s ease both}
-        .a2{animation:fadeUp .9s .3s ease both}
-        .a3{animation:fadeUp .9s .45s ease both}
-        .a4{animation:fadeUp .9s .6s ease both}
-        .float{animation:floatY 4s ease-in-out infinite}
-        .spin{animation:spinSlow 24s linear infinite}
-        .nl{background:none;border:none;cursor:pointer;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#555;transition:color .3s;padding:6px 0}
-        .nl:hover{color:#C8405A}
-        .cta{padding:13px 30px;border-radius:50px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;cursor:pointer;transition:all .3s;border:none;font-family:'Nunito',sans-serif}
-        .fl-link{font-size:.9rem;color:rgba(255,255,255,0.55);margin-bottom:12px;cursor:pointer;transition:color .25s,transform .25s;display:flex;align-items:center;gap:8px}
-        .fl-link:hover{color:#fff;transform:translateX(6px)}
-        .soc-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;text-decoration:none;transition:transform .25s}
-        .soc-row:hover{transform:translateX(6px)}
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap');
+        * { margin:0; padding:0; box-sizing:border-box; }
+        .nl { background:none; border:none; font-size:0.95rem; font-weight:600; cursor:pointer; }
       `}</style>
 
-      {/* ══ NAVBAR ══ */}
+      {/* NAVBAR RESPONSIVE */}
       <nav style={{
-        position:"fixed", top:0, left:0, right:0, zIndex:999,
-        background: scrolled ? "rgba(255,255,255,0.97)" : "rgba(255,255,255,0.88)",
-        backdropFilter:"blur(20px)",
-        boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.09)" : "none",
-        borderBottom:"1.5px solid rgba(0,0,0,0.06)",
-        padding: scrolled ? "10px 48px" : "16px 48px",
-        display:"flex", alignItems:"center", justifyContent:"space-between",
-        transition:"all .4s",
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 999,
+        background: scrolled ? "rgba(255,255,255,0.98)" : "rgba(255,255,255,0.92)",
+        backdropFilter: "blur(20px)",
+        boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.1)" : "none",
+        padding: "14px 20px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
       }}>
-        <div style={{ display:"flex", alignItems:"center", gap:14 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ width: 50, height: 50, borderRadius: "50%", border: "3px solid #C8405A", overflow: "hidden" }}>
+            {LOGO_IMAGE1 && <img src={LOGO_IMAGE1} alt="Lunéa" style={{ width: "100%", height: "100%", objectFit: "cover" }} />}
+          </div>
+          <div style={{ fontFamily: "'Playfair Display',serif", fontSize: "1.45rem", fontWeight: 900 }}>LUNÉA</div>
+        </div>
+
+        {/* Menu Desktop */}
+        <div style={{ display: "none", gap: 32, alignItems: "center" }} className="desktop-menu">
+          {SECTIONS.map(s => <button key={s.key} className="nl" onClick={() => goTo(s.key)}>{s.label}</button>)}
+          <button className="nl" onClick={() => goTo("about")}>À Propos</button>
+        </div>
+
+        {/* Contact + Hamburger */}
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <a href="tel:+221783015102" style={{ fontWeight: 700, color: "#1E8A6E", textDecoration: "none", fontSize: "0.95rem" }}>
+            📞 78 301 51 02
+          </a>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            style={{ fontSize: "1.8rem", background: "none", border: "none", cursor: "pointer" }}
+          >
+            {menuOpen ? "✕" : "☰"}
+          </button>
+        </div>
+
+        {/* Menu Mobile */}
+        {menuOpen && (
           <div style={{
-            width:48, height:48, borderRadius:"50%", overflow:"hidden",
-            border:"2.5px solid #C8405A",
-            boxShadow:"0 4px 16px rgba(200,64,90,0.3)",
-            display:"flex", alignItems:"center", justifyContent:"center",
-            background:"linear-gradient(135deg,#FDEEF1,#FEF5E6)", flexShrink:0,
+            position: "fixed", top: "72px", left: 0, right: 0,
+            background: "#fff", padding: "20px", boxShadow: "0 10px 30px rgba(0,0,0,0.15)", zIndex: 1000
           }}>
-            {LOGO_IMAGE1
-              ? <img src={LOGO_IMAGE1} alt="logo" style={{ width:"100%",height:"100%",objectFit:"cover" }}/>
-              : <span style={{ fontSize:"1.3rem" }}>🌸</span>
-            }
+            {SECTIONS.map(s => (
+              <button key={s.key} style={{ display: "block", width: "100%", textAlign: "left", padding: "14px 0", fontSize: "1.1rem" }} onClick={() => goTo(s.key)}>
+                {s.label}
+              </button>
+            ))}
+            <button style={{ display: "block", width: "100%", textAlign: "left", padding: "14px 0", fontSize: "1.1rem" }} onClick={() => goTo("about")}>
+              À Propos
+            </button>
           </div>
-          <div>
-            <div style={{
-              fontFamily:"'Playfair Display',serif", fontSize:"1.25rem", fontWeight:900, letterSpacing:".06em",
-              background:"linear-gradient(135deg,#C8405A,#6835C8,#C87A10)",
-              backgroundSize:"200% 200%", animation:"shimmer 4s linear infinite",
-              WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text",
-            }}>LUNÉA STORE </div>
-            <div style={{ fontSize:".44rem", letterSpacing:".3em", color:"#bbb", textTransform:"uppercase", fontWeight:700 }}>Parfumerie & Élégance</div>
-          </div>
-        </div>
-
-        <div style={{ display:"flex", gap:28 }}>
-          {SECTIONS.map(s=><button key={s.key} className="nl" onClick={()=>goTo(s.key)}>{s.label}</button>)}
-          <button className="nl" onClick={()=>goTo("about")}>À Propos</button>
-        </div>
-
-        <div style={{ display:"flex", gap:14, alignItems:"center" }}>
-          <a href="https://www.instagram.com/_lunea.store?igsh=d3ozaDZyMXY1Y3U=" target="_blank" rel="noreferrer"
-            style={{ fontSize:".65rem", fontWeight:700, color:"#C8405A", textDecoration:"none", letterSpacing:".05em" }}>
-            @lunea_store
-          </a>
-          <div style={{ width:1, height:18, background:"#ddd" }}/>
-          <a href="tel:+221783015102" style={{ fontSize:".68rem", fontWeight:700, color:"#1E8A6E", textDecoration:"none" }}>
-            📞 783 015 102
-          </a>
-        </div>
+        )}
       </nav>
 
-      {/* ══ HERO ══ */}
+      {/* HERO SECTION */}
       <section style={{
-        minHeight:"100vh",
-        background:"linear-gradient(160deg,#fff9f5 0%,#fef0f3 35%,#f2eeff 65%,#fef9ee 100%)",
-        display:"flex", alignItems:"center", justifyContent:"center",
-        padding:"140px 48px 80px", position:"relative", overflow:"hidden", textAlign:"center",
+        minHeight: "100vh",
+        background: "linear-gradient(160deg,#fff9f5 0%,#fef0f3 35%,#f2eeff 65%,#fef9ee 100%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "120px 20px 80px",
+        textAlign: "center",
+        position: "relative",
       }}>
-        {/* Bulles déco */}
-        {[
-          {s:460, c:"rgba(200,64,90,0.08)",  t:"-110px", l:"-110px"},
-          {s:360, c:"rgba(104,53,200,0.08)", b:"-80px",  r:"-80px"},
-          {s:240, c:"rgba(212,130,10,0.07)", t:"38%",    l:"7%"},
-          {s:180, c:"rgba(30,138,110,0.07)", t:"20%",    r:"8%"},
-        ].map((o,i)=>(
-          <div key={i} style={{ position:"absolute", width:o.s, height:o.s, borderRadius:"50%", background:o.c, top:o.t, left:o.l, bottom:o.b, right:o.r, pointerEvents:"none" }}/>
-        ))}
-        <div className="spin" style={{ position:"absolute", width:580, height:580, borderRadius:"50%", border:"1.5px dashed rgba(200,64,90,0.14)", top:"50%", left:"50%", transform:"translate(-50%,-50%)", pointerEvents:"none" }}/>
-
-        <div style={{ position:"relative", zIndex:1, maxWidth:840 }}>
-          {/* Logo */}
-          <div className="float a0" style={{ marginBottom:36 }}>
-            <div style={{
-              width:155, height:155, borderRadius:"50%", margin:"0 auto",
-              border:"4px solid #C8405A",
-              boxShadow:"0 14px 50px rgba(200,64,90,0.28), 0 4px 16px rgba(0,0,0,0.07)",
-              overflow:"hidden",
-              background:"linear-gradient(135deg,#FDEEF1,#FEF5E6)",
-              display:"flex", alignItems:"center", justifyContent:"center",
-            }}>
-              {LOGO_IMAGE
-                ? <img src={LOGO_IMAGE} alt="logo" style={{ width:"100%",height:"100%",objectFit:"cover" }}/>
-                : <div style={{ textAlign:"center" }}>
-                    <div style={{ fontSize:"2.6rem" }}>🌸</div>
-                    <div style={{ fontSize:".5rem", color:"#C8405A", letterSpacing:".12em", textTransform:"uppercase", fontWeight:800, marginTop:4 }}>Votre Logo</div>
-                  </div>
-              }
+        <div style={{ maxWidth: 820 }}>
+          <div style={{ marginBottom: 30 }}>
+            <div style={{ width: "clamp(130px, 32vw, 180px)", height: "clamp(130px, 32vw, 180px)", margin: "0 auto", borderRadius: "50%", border: "5px solid #C8405A", overflow: "hidden", background: "linear-gradient(135deg,#FDEEF1,#FEF5E6)" }}>
+              {LOGO_IMAGE && <img src={LOGO_IMAGE} alt="logo" style={{ width: "100%", height: "100%", objectFit: "cover" }} />}
             </div>
           </div>
 
-          <div className="a1" style={{ fontSize:".68rem", letterSpacing:".4em", textTransform:"uppercase", color:"#C8405A", fontWeight:800, marginBottom:18 }}>✦ &nbsp; Boutique Exclusive &nbsp; ✦</div>
+          <h1 style={{
+            fontFamily: "'Playfair Display',serif",
+            fontSize: "clamp(3.2rem, 9vw, 7rem)",
+            fontWeight: 900,
+            lineHeight: 0.95,
+            marginBottom: 16,
+            background: "linear-gradient(135deg,#C8405A,#6835C8,#C87A10)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}>
+            LUNÉA STORE
+          </h1>
 
-          <h1 className="a1" style={{
-            fontFamily:"'Playfair Display',serif",
-            fontSize:"clamp(4rem,12vw,8rem)", fontWeight:900, lineHeight:.95, letterSpacing:".04em", marginBottom:8,
-            background:"linear-gradient(135deg,#C8405A 0%,#E0607A 22%,#6835C8 50%,#C87A10 78%,#C8405A 100%)",
-            backgroundSize:"300% 300%", animation:"fadeUp .9s .1s ease both,shimmer 5s linear infinite",
-            WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text",
-          }}>LUNÉA store</h1>
-
-          <div className="a2" style={{
-            fontFamily:"'Playfair Display',serif",
-            fontSize:"clamp(.9rem,2.2vw,1.5rem)", fontWeight:400, fontStyle:"italic",
-            color:"#999", letterSpacing:".08em", marginBottom:36,
-          }}>Store &nbsp;·&nbsp; Parfumerie &amp; Bien-être Olfactif</div>
-
-          <p className="a3" style={{ fontSize:"1rem", lineHeight:1.9, color:"#666", maxWidth:640, margin:"0 auto 44px" }}>
-            Lunea Store est une marque spécialisée dans l'univers de la parfumerie et du bien-être olfactif.
-            Nous proposons une large gamme de produits tels que des huiles parfumées corporelles, des parfums
-            authentiques, des collections privées, parfums d'intensité soigneusement sélectionnés, des lunettes de soleil et des accssoires pour apporter
-            fraîcheur, élégance et plaisir des sens au quotidien.
+          <p style={{ fontSize: "1.05rem", color: "#555", maxWidth: 620, margin: "0 auto 40px", lineHeight: 1.7 }}>
+            Parfumerie & Bien-être Olfactif<br />Huiles parfumées • Parfums d’exception • Lunettes & Accessoires
           </p>
 
-          <div className="a4" style={{ display:"flex", gap:14, flexWrap:"wrap", justifyContent:"center" }}>
-            {SECTIONS.map(s=>(
-              <button key={s.key} className="cta" onClick={()=>goTo(s.key)}
-                style={{ background:s.gradient, color:"#fff", boxShadow:`0 6px 20px ${s.color}44` }}
-                onMouseEnter={e=>{ e.currentTarget.style.transform="translateY(-4px)"; e.currentTarget.style.boxShadow=`0 14px 34px ${s.color}55`; }}
-                onMouseLeave={e=>{ e.currentTarget.style.transform="none"; e.currentTarget.style.boxShadow=`0 6px 20px ${s.color}44`; }}
-              >{s.emoji} {s.label}</button>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center" }}>
+            {SECTIONS.map(s => (
+              <button
+                key={s.key}
+                onClick={() => goTo(s.key)}
+                style={{
+                  background: s.gradient,
+                  color: "#fff",
+                  padding: "14px 26px",
+                  borderRadius: 50,
+                  fontWeight: 800,
+                  fontSize: "0.8rem",
+                  letterSpacing: "0.08em",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {s.emoji} {s.label}
+              </button>
             ))}
           </div>
         </div>
-
-        {/* Scroll hint */}
-        <div style={{ position:"absolute", bottom:36, left:"50%", transform:"translateX(-50%)", display:"flex", flexDirection:"column", alignItems:"center", gap:8, opacity:.45 }}>
-          <div style={{ width:2, height:46, background:"linear-gradient(to bottom,transparent,#C8405A)", borderRadius:2 }}/>
-          <span style={{ fontSize:".5rem", letterSpacing:".3em", textTransform:"uppercase", color:"#C8405A", fontWeight:800 }}>Découvrir</span>
-        </div>
       </section>
 
-      {/* ══ SECTIONS PRODUITS ══ */}
-      {SECTIONS.map(s=><ProdSection key={s.key} section={s}/>)}
+      {/* SECTIONS PRODUITS */}
+      {SECTIONS.map(s => <ProdSection key={s.key} section={s} />)}
 
-      {/* ══ À PROPOS ══ */}
+      {/* À PROPOS */}
       <section id="about" style={{
-        padding:"90px 48px",
-        background:"linear-gradient(135deg,#1A1A2E 0%,#2D1A3E 50%,#1A2A1E 100%)",
-        position:"relative", overflow:"hidden",
+        padding: "90px 20px",
+        background: "linear-gradient(135deg,#1A1A2E 0%,#2D1A3E 50%,#1A2A1E 100%)",
+        color: "#fff",
+        textAlign: "center",
       }}>
-        <div style={{ position:"absolute",top:-100,right:-100,width:400,height:400,borderRadius:"50%",background:"rgba(200,64,90,0.08)",pointerEvents:"none" }}/>
-        <div style={{ position:"absolute",bottom:-80,left:-80,width:300,height:300,borderRadius:"50%",background:"rgba(104,53,200,0.08)",pointerEvents:"none" }}/>
-        <div style={{ maxWidth:900, margin:"0 auto", textAlign:"center", position:"relative", zIndex:1 }}>
-          <div style={{ fontSize:".62rem", letterSpacing:".4em", textTransform:"uppercase", color:"#E8758A", fontWeight:800, marginBottom:20 }}>✦ &nbsp; Notre Histoire &nbsp; ✦</div>
-          <h2 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(2rem,4vw,3.2rem)", fontWeight:700, fontStyle:"italic", color:"#fff", marginBottom:28, lineHeight:1.25 }}>
-            L'Art du Parfum,<br/>l'Élégance au Quotidien
+        <div style={{ maxWidth: 800, margin: "0 auto" }}>
+          <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(2.2rem, 5vw, 3.2rem)", marginBottom: 30 }}>
+            L’Art du Parfum,<br />l’Élégance au Quotidien
           </h2>
-          <div style={{ width:60, height:4, background:"linear-gradient(to right,#C8405A,#6835C8)", borderRadius:4, margin:"0 auto 32px" }}/>
-          <p style={{ fontSize:"1.05rem", lineHeight:2, color:"rgba(255,255,255,0.7)", maxWidth:720, margin:"0 auto" }}>
-            Lunea Store est une marque spécialisée dans l'univers de la parfumerie et du bien-être olfactif.
-            Nous proposons une large gamme de produits tels que des huiles parfumées corporelles, des parfums
-            authentiques, des collections privées, parfums d'intensité soigneusement sélectionnés des lunettes de soleil et des accssoires pour apporter
-            fraîcheur, élégance et plaisir des sens au quotidien.
+          <p style={{ fontSize: "1.05rem", lineHeight: 1.9, color: "rgba(255,255,255,0.8)" }}>
+            Lunea Store est une marque spécialisée dans l’univers de la parfumerie et du bien-être olfactif.
+            Nous proposons des produits de qualité pour apporter fraîcheur, élégance et plaisir des sens au quotidien.
           </p>
         </div>
       </section>
 
-      {/* ══ FOOTER ══ */}
-      <footer style={{ background:"#12121E", padding:"68px 48px 30px" }}>
-        <div style={{ maxWidth:1200, margin:"0 auto" }}>
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(210px,1fr))", gap:48, marginBottom:52 }}>
-
-            <div>
-              <div style={{ fontFamily:"'Playfair Display',serif", fontSize:"2rem", fontWeight:900, background:"linear-gradient(135deg,#C8405A,#E8758A)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text", marginBottom:14 }}>LUNÉA</div>
-              <div style={{ fontSize:".85rem", color:"rgba(255,255,255,0.48)", lineHeight:1.9, fontStyle:"italic" }}>L'art du parfum,<br/>l'élégance au quotidien.</div>
-            </div>
-
-            <div>
-              <div style={{ fontSize:".58rem", letterSpacing:".3em", textTransform:"uppercase", color:"#E8758A", fontWeight:800, marginBottom:20 }}>Nos Collections</div>
-              {SECTIONS.map(s=>(
-                <div key={s.key} className="fl-link" onClick={()=>goTo(s.key)}>{s.emoji} {s.label}</div>
-              ))}
-            </div>
-
-            <div>
-              <div style={{ fontSize:".58rem", letterSpacing:".3em", textTransform:"uppercase", color:"#B499E8", fontWeight:800, marginBottom:20 }}>Réseaux Sociaux</div>
-              {[
-                {p:"Instagram", h:"@lunea_store",   c:"#E8758A", bg:"rgba(200,64,90,0.15)",   url:"https://www.instagram.com/_lunea.store?igsh=d3ozaDZyMXY1Y3U=",  a:"IG"},
-                {p:"TikTok",    h:"@lunea_store00", c:"#B499E8", bg:"rgba(104,53,200,0.15)",  url:"https://tiktok.com/@lunea_store00", a:"TT"},
-                {p:"Snapchat",  h:"mdbn2024",       c:"#F0C060", bg:"rgba(212,130,10,0.15)",  url:"https://snapchat.com/t/edy0YWUs",                                 a:"SC"},
-              ].map(s=>(
-                <a key={s.p} href={s.url} target="_blank" rel="noreferrer" className="soc-row">
-                  <div style={{ width:38,height:38,borderRadius:"50%",flexShrink:0,background:s.bg,border:`2px solid ${s.c}55`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:".65rem",color:s.c,fontWeight:800 }}>{s.a}</div>
-                  <div>
-                    <div style={{ fontSize:".5rem",letterSpacing:".2em",textTransform:"uppercase",color:s.c,fontWeight:800 }}>{s.p}</div>
-                    <div style={{ fontSize:".88rem",color:"rgba(255,255,255,0.52)" }}>{s.h}</div>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            <div>
-              <div style={{ fontSize:".58rem", letterSpacing:".3em", textTransform:"uppercase", color:"#7DCDB8", fontWeight:800, marginBottom:20 }}>Contact</div>
-              {["783 015 102","768 680 238"].map(t=>(
-                <div key={t} style={{ display:"flex",alignItems:"center",gap:10,fontSize:".9rem",color:"rgba(255,255,255,0.58)",marginBottom:12 }}>
-                  📞 +221 {t}
-                </div>
-              ))}
-              <div style={{ marginTop:22 }}>
-                <div style={{ fontSize:".55rem",letterSpacing:".2em",textTransform:"uppercase",color:"rgba(255,255,255,0.3)",marginBottom:10 }}>Commandez aussi via</div>
-                <a href="https://wa.me/221783015102" target="_blank" rel="noreferrer"
-                  style={{ display:"inline-flex",alignItems:"center",gap:8,fontSize:".8rem",fontWeight:700,color:"#25D366",border:"2px solid rgba(37,211,102,0.3)",padding:"9px 20px",borderRadius:30,textDecoration:"none",transition:"background .3s" }}
-                  onMouseEnter={e=>e.currentTarget.style.background="rgba(37,211,102,0.1)"}
-                  onMouseLeave={e=>e.currentTarget.style.background="transparent"}
-                >WhatsApp →</a>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ borderTop:"1px solid rgba(255,255,255,0.08)", paddingTop:22, display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:12 }}>
-            <span style={{ fontSize:".56rem", letterSpacing:".14em", color:"rgba(255,255,255,0.22)", textTransform:"uppercase" }}>© 2025 Lunéa Store — Tous droits réservés</span>
-            <span style={{ fontSize:".56rem", letterSpacing:".14em", color:"rgba(255,255,255,0.22)", fontStyle:"italic" }}>✦ Fraîcheur · Élégance · Plaisir des Sens ✦</span>
+      {/* FOOTER */}
+      <footer style={{ background: "#12121E", padding: "70px 20px 40px", color: "#ccc" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          {/* Vous pouvez garder ou adapter votre footer ici */}
+          <div style={{ textAlign: "center", fontSize: "0.9rem", opacity: 0.7 }}>
+            © 2025 Lunéa Store — Tous droits réservés<br />
+            Fraîcheur • Élégance • Plaisir des Sens
           </div>
         </div>
       </footer>
