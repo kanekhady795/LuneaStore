@@ -400,7 +400,7 @@ export default function LuneaStore() {
           </a>
           <div style={{ width:1, height:18, background:"#ddd" }}/>
           <a href="tel:+221783015102" style={{ fontSize:".68rem", fontWeight:700, color:"#1E8A6E", textDecoration:"none" }}>
-            📞 783 015 102
+            📞 78 301 51 02
           </a>
         </div>
 
