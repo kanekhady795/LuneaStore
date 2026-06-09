@@ -5,7 +5,7 @@
 // ─── 1. IMPORTEZ VOS IMAGES ICI ──────────────────────────────
 // Créez un dossier "assets" dans src/, puis décommentez :
 //
- import logo from "./assets/logo.png";
+import logo from "./assets/logo.png";
 //
 import parfum1 from "./assets/parfum1.png";
 import parfum3 from "./assets/parfum3.png";
@@ -126,7 +126,7 @@ const PRODUCTS = {
     { name: " Van cleef Rose", note: "Cat-eye · Audacieux · Chic", badge: "Tendance", image: a1 },
     { name: "Van Cleef doré", note: "Oversize · Glamour · Mode", badge: "Glamour", image: a2 },
     { name: "Cartier", note: "Aviateur · Classique · Intemporel", badge: "Classique", image: a3 },
-    { name: "Cartier", note: "Round · Mystérieux · Élégant", badge: "Élégant", image: a13 },
+    { name: "Montre Chic", note: "Round · Mystérieux · Élégant", badge: "Élégant", image: a13 },
     { name: "Montre Chic", note: "Cat-eye · Audacieux · Chic", badge: "Tendance", image: a5 },
     { name: "Boucle d'oreille", note: "Oversize · Glamour · Mode", badge: "Glamour", image: a6},
     { name: "Bracelet,Boucle D'oreille,Bague", note: "Aviateur · Classique · Intemporel", badge: "Classique", image: a7},
@@ -426,7 +426,7 @@ export default function LuneaStore() {
             📸 @lunea_store
           </a>
           <a href="tel:+221783015102" style={{ fontSize:".9rem", fontWeight:700, color:"#1E8A6E", textDecoration:"none" }}>
-            📞 +221 783 015 102
+            📞 +221 78 301 51 02
           </a>
           <a href="https://wa.me/221783015102" target="_blank" rel="noreferrer"
             style={{ fontSize:".9rem", fontWeight:700, color:"#25D366", textDecoration:"none" }}>
@@ -566,7 +566,7 @@ export default function LuneaStore() {
             </div>
             <div>
               <div style={{ fontSize:".58rem", letterSpacing:".3em", textTransform:"uppercase", color:"#7DCDB8", fontWeight:800, marginBottom:20 }}>Contact</div>
-              {["783 015 102","768 680 238"].map(t=>(
+              {["78 301 51 02","76 868 02 38"].map(t=>(
                 <div key={t} style={{ display:"flex",alignItems:"center",gap:10,fontSize:".9rem",color:"rgba(255,255,255,0.58)",marginBottom:12 }}>
                   📞 +221 {t}
                 </div>
