@@ -75,12 +75,12 @@ const LOGO_IMAGE1 = logo;
 // Exemple : image: parfum1
 const PRODUCTS = {
   parfums: [
-    { note: "Boisé · Ambré · Oriental", price:"3000 FCFA" , badge: "Best-seller", image: parfum1 },
-    { name: "OUD", note: "Floral · Romantique · Doux",  badge: "Nouveau", image: parfum3 },
-    { name: "Kayali 28", note: "Musqué · Profond · Sensuel",  badge: "Exclusif", image: parfum4},
-    { name: "Khamrah", note: "Boisé · Crémeux · Chaleureux", badge: "Collection", image: parfum5 },
-    { name: "Poussiere d'or", note: "Boisé · Crémeux · Chaleureux",  badge: "Collection", image: parfum6 },
-    { name: "Bianco Latte", note: "Boisé · Crémeux · Chaleureux",badge: "Collection", image: parfum7 },
+    { note: "Boisé · Ambré · Oriental", price:"3000 FCFA" , badge: "Best-seller", image: parfum1 , price: "3000 FCFA" },
+    { name: "OUD", note: "Floral · Romantique · Doux",  badge: "Nouveau", image: parfum3 , price: "3000 FCFA" },
+    { name: "Kayali 28", note: "Musqué · Profond · Sensuel",  badge: "Exclusif", image: parfum4, price: "3000 FCFA" },
+    { name: "Khamrah", note: "Boisé · Crémeux · Chaleureux", badge: "Collection", image: parfum5, price: "3000 FCFA" },
+    { name: "Poussiere d'or", note: "Boisé · Crémeux · Chaleureux",  badge: "Collection", image: parfum6, price: "3000 FCFA" },
+    { name: "Bianco Latte", note: "Boisé · Crémeux · Chaleureux",badge: "Collection", image: parfum7, price: "3000 FCFA" },
     { name: "Oud Al malik", note: "Boisé · Crémeux · Chaleureux", badge: "Collection", image: parfum8 },
     { name: "Khair", note: "Citrus · Vif · Rafraîchissant", badge: "Nouveau", image: parfum9, },
     { name: "Vanilla Aura", note: "Fruité · Sucré · Ensoleillé", badge: "Exclusif", image: parfum10 },
